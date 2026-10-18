@@ -1,0 +1,26 @@
+<div class="mt-4">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Student</th>
+                <th>Course</th>
+                <th>Attendance</th>
+                <th>Quiz Scores</th>
+                <th>Marks</th>
+                <th>Semester</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in performance %}
+            <tr>
+                <td>{{ record.student_id }}</td>
+                <td>{{ record.course_id }}</td>
+                <td>{{ record.attendance }}%</td>
+                <td>{{ record.quiz_scores }}</td>
+                <td>{{ record.marks }}</td>
+                <td>{{ record.semester }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

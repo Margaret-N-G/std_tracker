@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<div class="p-5 mb-4 mt-4 bg-body-tertiary rounded-3 border">
+    <div class="container-fluid py-4">
+        <h1 class="display-5 fw-bold">Student Performance Tracker</h1>
+        <p class="col-md-8 fs-5">
+            This Student Performance Tracker is a tool designed for schools,
+            teachers and administrators to monitor academic performance.
+        </p>
+
+        {% if not session.get('email') %}
+            <div class="mt-4">
+                <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg">Login</a>
+                <a href="{{ url_for('users') }}" class="btn btn-outline-secondary btn-lg">Register</a>
+            </div>
+        {% else %}
+            <div class="mt-4">
+                <a href="{{ url_for('dashboard') }}" class="btn btn-primary btn-lg">Go to Dashboard</a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}
